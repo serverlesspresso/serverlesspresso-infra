@@ -27,3 +27,13 @@ output "config_table_arn" {
   description = "Config DynamoDB table ARN"
   value       = aws_dynamodb_table.config.arn
 }
+
+output "counting_table_name" {
+  description = "Counting DynamoDB table name"
+  value       = aws_dynamodb_table.counting.name
+}
+
+output "counting_table_arn" {
+  description = "Counting DynamoDB table ARN"
+  value       = aws_dynamodb_table.counting.arn
+}
