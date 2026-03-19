@@ -37,3 +37,13 @@ output "counting_table_arn" {
   description = "Counting DynamoDB table ARN"
   value       = aws_dynamodb_table.counting.arn
 }
+
+output "validator_table_name" {
+  description = "Validator DynamoDB table name"
+  value       = aws_dynamodb_table.validator.name
+}
+
+output "validator_table_arn" {
+  description = "Validator DynamoDB table ARN"
+  value       = aws_dynamodb_table.validator.arn
+}

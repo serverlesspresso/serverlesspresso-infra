@@ -70,3 +70,18 @@ resource "aws_dynamodb_table" "counting" {
     enabled = true
   }
 }
+
+resource "aws_dynamodb_table" "validator" {
+  name         = "${var.project_name}-validator-${var.environment}"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "pk"
+
+  attribute {
+    name = "pk"
+    type = "S"
+  }
+
+  server_side_encryption {
+    enabled = true
+  }
+}
