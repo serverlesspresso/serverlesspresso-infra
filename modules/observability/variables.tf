@@ -13,3 +13,9 @@ variable "log_retention_days" {
   type        = number
   default     = 7
 }
+
+variable "aws_region" {
+  description = "AWS region"
+  type        = string
+  default     = "us-east-1"
+}

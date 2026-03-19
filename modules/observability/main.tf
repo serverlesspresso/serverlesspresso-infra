@@ -27,32 +27,41 @@ resource "aws_cloudwatch_dashboard" "main" {
         type = "metric"
         properties = {
           title  = "Lambda Invocations"
+          region = var.aws_region
           period = 300
           metrics = [
             ["AWS/Lambda", "Invocations", "FunctionName", "${var.project_name}-order-processor-${var.environment}"],
             ["AWS/Lambda", "Invocations", "FunctionName", "${var.project_name}-menu-manager-${var.environment}"]
           ]
+          view = "timeSeries"
+          stat = "Sum"
         }
       },
       {
         type = "metric"
         properties = {
           title  = "Lambda Errors"
+          region = var.aws_region
           period = 300
           metrics = [
             ["AWS/Lambda", "Errors", "FunctionName", "${var.project_name}-order-processor-${var.environment}"],
             ["AWS/Lambda", "Errors", "FunctionName", "${var.project_name}-menu-manager-${var.environment}"]
           ]
+          view = "timeSeries"
+          stat = "Sum"
         }
       },
       {
         type = "metric"
         properties = {
           title  = "DynamoDB Consumed Write Capacity"
+          region = var.aws_region
           period = 300
           metrics = [
             ["AWS/DynamoDB", "ConsumedWriteCapacityUnits", "TableName", "${var.project_name}-orders-${var.environment}"]
           ]
+          view = "timeSeries"
+          stat = "Sum"
         }
       }
     ]

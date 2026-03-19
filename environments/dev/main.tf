@@ -75,5 +75,6 @@ module "observability" {
 
   project_name       = local.project_name
   environment        = local.environment
+  aws_region         = local.aws_region
   log_retention_days = 7
 }
